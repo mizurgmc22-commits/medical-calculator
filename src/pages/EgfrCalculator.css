@@ -1,0 +1,120 @@
+.egfr-calculator {
+  padding-bottom: var(--space-2xl);
+}
+
+/* Sex Toggle */
+.sex-toggle {
+  display: flex;
+  gap: var(--space-xs);
+  background: var(--bg-input);
+  border-radius: var(--radius-sm);
+  padding: 3px;
+}
+
+.sex-btn {
+  flex: 1;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.sex-btn.active {
+  background: var(--bg-accent);
+  color: var(--text-inverse);
+  box-shadow: var(--shadow-sm);
+}
+
+.sex-btn:hover:not(.active) {
+  color: var(--text-primary);
+}
+
+.label-note {
+  font-size: var(--font-size-xs);
+  font-weight: 400;
+  color: var(--text-tertiary);
+}
+
+/* CKD Stage Card */
+.ckd-stage-card {
+  text-align: center;
+  padding: var(--space-lg);
+}
+
+.ckd-stage-card.success {
+  background: linear-gradient(135deg, #10b981, #059669);
+  border: none;
+  color: white;
+}
+
+.ckd-stage-card.warning {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  border: none;
+  color: white;
+}
+
+.ckd-stage-card.danger {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  border: none;
+  color: white;
+}
+
+.ckd-stage-label {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  opacity: 0.85;
+  margin-bottom: var(--space-xs);
+}
+
+.ckd-stage-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+}
+
+.ckd-stage-desc {
+  font-size: var(--font-size-sm);
+  opacity: 0.9;
+}
+
+/* CKD Table active row */
+.ckd-table .active-stage {
+  background: var(--bg-accent-light);
+  font-weight: 700;
+}
+
+.ckd-table .active-stage .stage-cell {
+  color: var(--text-accent);
+}
+
+.stage-cell {
+  font-weight: 700;
+}
+
+/* ==========================================
+   Mobile Responsive
+   ========================================== */
+
+@media (max-width: 480px) {
+  .ckd-stage-value {
+    font-size: 2rem;
+  }
+
+  .ckd-stage-card {
+    padding: var(--space-md);
+  }
+
+  .sex-toggle {
+    gap: 2px;
+    padding: 2px;
+  }
+
+  .sex-btn {
+    padding: var(--space-sm) var(--space-xs);
+    font-size: var(--font-size-xs);
+  }
+}

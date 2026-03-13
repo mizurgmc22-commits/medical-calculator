@@ -1,0 +1,245 @@
+.gamma-calculator {
+  padding-bottom: var(--space-2xl);
+}
+
+/* Mode Toggle */
+.mode-toggle {
+  display: flex;
+  gap: var(--space-xs);
+  background: var(--bg-input);
+  border-radius: var(--radius-sm);
+  padding: 3px;
+}
+
+.mode-btn {
+  flex: 1;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.mode-btn.active {
+  background: var(--bg-accent);
+  color: var(--text-inverse);
+  box-shadow: var(--shadow-sm);
+}
+
+.mode-btn:hover:not(.active) {
+  color: var(--text-primary);
+}
+
+.mode-hint {
+  font-size: var(--font-size-xs);
+  color: var(--text-tertiary);
+  margin-top: var(--space-xs);
+}
+
+/* Input Row (stacked) */
+.input-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* Drug Management */
+.manage-link {
+  float: right;
+  background: transparent;
+  color: var(--text-accent);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.select-field {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+
+.drug-manager {
+  background: var(--bg-input);
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+  animation: fadeInUp 0.2s ease;
+}
+
+.drug-manager-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.sync-badge {
+  font-size: 10px;
+  font-weight: normal;
+  color: #4caf50;
+  background: rgba(74, 175, 80, 0.1);
+  padding: 2px 6px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  transition: all var(--transition-normal);
+}
+
+.sync-badge.success {
+  background: var(--bg-success);
+  color: var(--text-success);
+}
+
+.sync-badge.error {
+  background: var(--bg-danger);
+  color: var(--text-danger);
+}
+
+.sync-loading, .empty-msg {
+  font-size: var(--font-size-xs);
+  color: var(--text-tertiary);
+  text-align: center;
+  padding: var(--space-md);
+}
+
+.drug-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.drug-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-card);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+}
+
+.drug-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.drug-name {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.drug-spec {
+  color: var(--text-tertiary);
+  font-size: var(--font-size-xs);
+}
+
+.drug-delete-btn {
+  background: transparent;
+  color: var(--text-danger);
+  font-size: var(--font-size-sm);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.drug-delete-btn:hover {
+  background: var(--bg-danger);
+}
+
+.add-drug-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.add-drug-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+.add-drug-input {
+  font-size: var(--font-size-sm) !important;
+  padding: 8px var(--space-sm) !important;
+}
+
+.add-drug-btn {
+  padding: 8px !important;
+  font-size: var(--font-size-sm) !important;
+}
+
+.drug-manager-footer {
+  margin-top: var(--space-md);
+  padding-top: var(--space-sm);
+  border-top: 1px dotted var(--border-color);
+  text-align: right;
+}
+
+.reset-default-btn {
+  background: transparent;
+  color: var(--text-tertiary);
+  font-size: var(--font-size-xs);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.reset-default-btn:hover {
+  background: var(--bg-input);
+  color: var(--text-primary);
+}
+
+/* Concentration Display */
+.concentration-display {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-accent-light);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-md);
+}
+
+.concentration-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.concentration-value {
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  color: var(--text-accent);
+}
+
+/* ==========================================
+   Mobile Responsive
+   ========================================== */
+
+@media (max-width: 480px) {
+  .mode-toggle {
+    gap: 2px;
+    padding: 2px;
+  }
+
+  .mode-btn {
+    padding: var(--space-sm) var(--space-xs);
+    font-size: var(--font-size-xs);
+  }
+
+  .add-drug-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-xs);
+  }
+}
