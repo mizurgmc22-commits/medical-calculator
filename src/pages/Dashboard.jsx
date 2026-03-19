@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { calculators } from '../calculators/registry';
+import { calculators } from '../utils/registry';
 import CalculatorCard from '../components/CalculatorCard';
 import './Dashboard.css';
 

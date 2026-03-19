@@ -5,7 +5,6 @@ export const calculators = [
     description: '体表面積・BMI・予測体重を算出',
     icon: '📐',
     path: '/calculator/bsa',
-    phase: 1,
     enabled: true,
   },
   {
@@ -14,7 +13,6 @@ export const calculators = [
     description: 'mm / Fr / inch の換算、G(ゲージ)対応表',
     icon: '📏',
     path: '/calculator/size',
-    phase: 1,
     enabled: true,
   },
   {
@@ -23,7 +21,6 @@ export const calculators = [
     description: '腎機能評価（eGFR・クレアチニンクリアランス）',
     icon: '🔬',
     path: '/calculator/egfr',
-    phase: 2,
     enabled: true,
   },
   {
@@ -32,7 +29,6 @@ export const calculators = [
     description: '薬剤投与速度のγ計算・逆算',
     icon: '💊',
     path: '/calculator/gamma',
-    phase: 2,
     enabled: true,
   },
   {
@@ -41,7 +37,6 @@ export const calculators = [
     description: '医療用ガスボンベの残量・使用可能時間',
     icon: '🔋',
     path: '/calculator/cylinder',
-    phase: 3,
     enabled: true,
   },
   {
@@ -50,7 +45,6 @@ export const calculators = [
     description: '計算結果や申し送りを記録するメモ帳',
     icon: '📝',
     path: '/memos',
-    phase: 4,
     enabled: true,
   },
 ];

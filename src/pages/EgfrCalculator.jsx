@@ -72,16 +72,16 @@ export default function EgfrCalculator() {
         {/* 性別選択 */}
         <div className="input-group">
           <label className="input-label">性別</label>
-          <div className="sex-toggle">
+          <div className="toggle-group">
             <button
-              className={`sex-btn ${sex === 'male' ? 'active' : ''}`}
+              className={`toggle-btn ${sex === 'male' ? 'active' : ''}`}
               onClick={() => setSex('male')}
               type="button"
             >
               ♂ 男性
             </button>
             <button
-              className={`sex-btn ${sex === 'female' ? 'active' : ''}`}
+              className={`toggle-btn ${sex === 'female' ? 'active' : ''}`}
               onClick={() => setSex('female')}
               type="button"
             >

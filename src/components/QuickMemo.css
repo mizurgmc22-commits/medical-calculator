@@ -5,27 +5,22 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: #ffffff;
-  color: var(--text-color);
+  background: var(--bg-card);
+  color: var(--text-primary);
   border: 1px solid var(--border-color);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-md);
   font-size: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 999;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-[data-theme='dark'] .quick-memo-fab {
-  background: #1e293b;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .quick-memo-fab:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-lg);
 }
 
 .quick-memo-fab:active {
@@ -42,7 +37,7 @@
   z-index: 1000;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--transition-normal);
 }
 
 .quick-memo-overlay.open {
@@ -56,19 +51,15 @@
   left: 0;
   width: 100%;
   height: 60vh;
-  background: var(--bg-color);
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.2);
+  background: var(--bg-card);
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
   z-index: 1001;
   display: flex;
   flex-direction: column;
   transform: translateY(100%);
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-[data-theme='dark'] .quick-memo-container {
-  background: var(--bg-color-dark);
 }
 
 @media (min-width: 768px) {
@@ -78,7 +69,7 @@
     bottom: 90px;
     left: auto;
     right: 24px;
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     transform: scale(0.9) translateY(20px);
     transform-origin: bottom right;
     opacity: 0;
@@ -100,43 +91,33 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px;
+  padding: var(--space-md);
   border-bottom: 1px solid var(--border-color);
-  background: #ffffff;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-}
-
-[data-theme='dark'] .quick-memo-header {
-  background: #1e293b;
+  background: var(--bg-secondary);
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
 }
 
 .quick-memo-title {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: var(--font-size-lg);
   font-weight: 600;
-  color: var(--text-color);
-}
-
-[data-theme='dark'] .quick-memo-title {
-  color: var(--text-color-dark);
+  color: var(--text-primary);
 }
 
 .quick-memo-status {
-  font-size: 0.8rem;
-  color: #888;
-  margin-right: 12px;
+  font-size: var(--font-size-xs);
+  color: var(--text-tertiary);
+  margin-right: var(--space-sm);
   margin-left: auto;
 }
 
 .quick-memo-close {
   background: none;
-  border: none;
-  font-size: 1.2rem;
-  color: var(--text-color);
-  cursor: pointer;
-  padding: 4px;
-  border-radius: 50%;
+  font-size: var(--font-size-xl);
+  color: var(--text-secondary);
+  padding: var(--space-xs);
+  border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -144,21 +125,13 @@
   height: 32px;
 }
 
-[data-theme='dark'] .quick-memo-close {
-  color: var(--text-color-dark);
-}
-
 .quick-memo-close:hover {
-  background: rgba(0, 0, 0, 0.05);
-}
-
-[data-theme='dark'] .quick-memo-close:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--bg-input);
 }
 
 .quick-memo-body {
   flex: 1;
-  padding: 12px;
+  padding: var(--space-sm);
   display: flex;
   flex-direction: column;
 }
@@ -167,22 +140,18 @@
   flex: 1;
   width: 100%;
   border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 12px;
-  font-size: 1rem;
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm);
+  font-size: var(--font-size-md);
   font-family: inherit;
   resize: none;
-  background: #ffffff;
-  color: var(--text-color);
+  background: var(--bg-input);
+  color: var(--text-primary);
   line-height: 1.5;
-}
-
-[data-theme='dark'] .quick-memo-textarea {
-  background: #1e293b;
-  color: var(--text-color-dark);
 }
 
 .quick-memo-textarea:focus {
   outline: none;
-  border-color: #3b82f6;
+  border-color: var(--border-color-focus);
+  box-shadow: 0 0 0 3px var(--bg-accent-light);
 }

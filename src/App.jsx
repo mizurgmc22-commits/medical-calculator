@@ -12,80 +12,31 @@ import GammaCalculator from './pages/GammaCalculator';
 import CylinderCalculator from './pages/CylinderCalculator';
 import MemoList from './pages/MemoList';
 
+const protectedRoutes = [
+  { path: '/', element: <Dashboard /> },
+  { path: '/calculator/bsa', element: <BsaCalculator /> },
+  { path: '/calculator/size', element: <SizeConverter /> },
+  { path: '/calculator/egfr', element: <EgfrCalculator /> },
+  { path: '/calculator/gamma', element: <GammaCalculator /> },
+  { path: '/calculator/cylinder', element: <CylinderCalculator /> },
+  { path: '/memos', element: <MemoList /> },
+];
+
 function AppRoutes() {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
-      <Route
-        path="/"
-        element={
-          <ProtectedRoute>
-            <Layout>
-              <Dashboard />
-            </Layout>
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/calculator/bsa"
-        element={
-          <ProtectedRoute>
-            <Layout>
-              <BsaCalculator />
-            </Layout>
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/calculator/size"
-        element={
-          <ProtectedRoute>
-            <Layout>
-              <SizeConverter />
-            </Layout>
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/calculator/egfr"
-        element={
-          <ProtectedRoute>
-            <Layout>
-              <EgfrCalculator />
-            </Layout>
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/calculator/gamma"
-        element={
-          <ProtectedRoute>
-            <Layout>
-              <GammaCalculator />
-            </Layout>
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/calculator/cylinder"
-        element={
-          <ProtectedRoute>
-            <Layout>
-              <CylinderCalculator />
-            </Layout>
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/memos"
-        element={
-          <ProtectedRoute>
-            <Layout>
-              <MemoList />
-            </Layout>
-          </ProtectedRoute>
-        }
-      />
+      {protectedRoutes.map(({ path, element }) => (
+        <Route
+          key={path}
+          path={path}
+          element={
+            <ProtectedRoute>
+              <Layout>{element}</Layout>
+            </ProtectedRoute>
+          }
+        />
+      ))}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

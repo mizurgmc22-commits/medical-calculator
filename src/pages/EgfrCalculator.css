@@ -2,42 +2,6 @@
   padding-bottom: var(--space-2xl);
 }
 
-/* Sex Toggle */
-.sex-toggle {
-  display: flex;
-  gap: var(--space-xs);
-  background: var(--bg-input);
-  border-radius: var(--radius-sm);
-  padding: 3px;
-}
-
-.sex-btn {
-  flex: 1;
-  padding: var(--space-sm) var(--space-md);
-  border-radius: 6px;
-  background: transparent;
-  color: var(--text-secondary);
-  font-size: var(--font-size-sm);
-  font-weight: 600;
-  transition: all var(--transition-fast);
-}
-
-.sex-btn.active {
-  background: var(--bg-accent);
-  color: var(--text-inverse);
-  box-shadow: var(--shadow-sm);
-}
-
-.sex-btn:hover:not(.active) {
-  color: var(--text-primary);
-}
-
-.label-note {
-  font-size: var(--font-size-xs);
-  font-weight: 400;
-  color: var(--text-tertiary);
-}
-
 /* CKD Stage Card */
 .ckd-stage-card {
   text-align: center;
@@ -91,14 +55,6 @@
   color: var(--text-accent);
 }
 
-.stage-cell {
-  font-weight: 700;
-}
-
-/* ==========================================
-   Mobile Responsive
-   ========================================== */
-
 @media (max-width: 480px) {
   .ckd-stage-value {
     font-size: 2rem;
@@ -106,15 +62,5 @@
 
   .ckd-stage-card {
     padding: var(--space-md);
-  }
-
-  .sex-toggle {
-    gap: 2px;
-    padding: 2px;
-  }
-
-  .sex-btn {
-    padding: var(--space-sm) var(--space-xs);
-    font-size: var(--font-size-xs);
   }
 }

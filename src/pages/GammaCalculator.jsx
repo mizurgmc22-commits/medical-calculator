@@ -225,16 +225,16 @@ export default function GammaCalculator() {
       <div className="input-section">
         <div className="input-group">
           <label className="input-label">計算モード</label>
-          <div className="mode-toggle">
+          <div className="toggle-group">
             <button
-              className={`mode-btn ${mode === 'gamma' ? 'active' : ''}`}
+              className={`toggle-btn ${mode === 'gamma' ? 'active' : ''}`}
               onClick={() => { setMode('gamma'); setResults(null); }}
               type="button"
             >
               γ算出
             </button>
             <button
-              className={`mode-btn ${mode === 'rate' ? 'active' : ''}`}
+              className={`toggle-btn ${mode === 'rate' ? 'active' : ''}`}
               onClick={() => { setMode('rate'); setResults(null); }}
               type="button"
             >

@@ -30,11 +30,8 @@
   box-shadow: 0 0 0 1px var(--gas-accent, var(--bg-accent));
 }
 
-.gas-btn:hover:not(.active) {
-  border-color: var(--text-tertiary);
-}
+.gas-btn:hover:not(.active) { border-color: var(--text-tertiary); }
 
-/* Color Bar */
 .gas-color-bar {
   width: 4px;
   height: 24px;
@@ -48,7 +45,6 @@
   font-size: var(--font-size-xs);
 }
 
-/* 解説用カラードット */
 .gas-color-dot {
   display: inline-block;
   width: 14px;
@@ -58,18 +54,13 @@
   margin-right: 6px;
 }
 
-/* ==========================================
-   Tachometer-style Gauge
-   ========================================== */
-
+/* Tachometer Gauge */
 .tacho-card {
   background: radial-gradient(ellipse at center, #1a1f2e 0%, #0d1117 100%);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-lg);
   padding: var(--space-md);
-  box-shadow:
-    0 4px 20px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
   overflow: hidden;
 }
 
@@ -81,46 +72,14 @@
   display: block;
 }
 
-.tacho-needle {
-  transform-origin: 150px 150px;
-  transition: x2 0.6s ease, y2 0.6s ease;
-}
+.tacho-needle { transform-origin: 150px 150px; transition: x2 0.6s ease, y2 0.6s ease; }
+.tacho-tick-label { font-size: 9px; font-weight: 600; fill: var(--text-tertiary); font-family: var(--font-family); }
+.tacho-percent-text { font-size: 1.8rem; font-weight: 800; font-family: var(--font-family); letter-spacing: -0.02em; }
+.tacho-sub-label { font-size: 0.65rem; fill: var(--text-tertiary); font-weight: 500; font-family: var(--font-family); }
+.tacho-time-text { font-size: 1rem; font-weight: 700; fill: var(--text-primary); font-family: var(--font-family); }
+.tacho-time-label { font-size: 0.55rem; fill: var(--text-tertiary); font-family: var(--font-family); }
 
-.tacho-tick-label {
-  font-size: 9px;
-  font-weight: 600;
-  fill: var(--text-tertiary);
-  font-family: var(--font-family);
-}
-
-.tacho-percent-text {
-  font-size: 1.8rem;
-  font-weight: 800;
-  font-family: var(--font-family);
-  letter-spacing: -0.02em;
-}
-
-.tacho-sub-label {
-  font-size: 0.65rem;
-  fill: var(--text-tertiary);
-  font-weight: 500;
-  font-family: var(--font-family);
-}
-
-.tacho-time-text {
-  font-size: 1rem;
-  font-weight: 700;
-  fill: var(--text-primary);
-  font-family: var(--font-family);
-}
-
-.tacho-time-label {
-  font-size: 0.55rem;
-  fill: var(--text-tertiary);
-  font-family: var(--font-family);
-}
-
-/* Time display inline units */
+/* Time display */
 .time-unit-inline {
   font-size: var(--font-size-sm);
   font-weight: 500;
@@ -128,76 +87,18 @@
   margin-right: var(--space-xs);
 }
 
-/* Result Row */
-.result-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-md);
-}
-
-/* Time Value */
-.time-value {
-  display: flex;
-  align-items: baseline;
-  gap: 2px;
-}
-
-.time-number {
-  font-size: var(--font-size-xl);
-  font-weight: 800;
-}
+.time-value { display: flex; align-items: baseline; gap: 2px; }
+.time-number { font-size: var(--font-size-xl); font-weight: 800; }
 
 /* Time Table active row */
-.time-table .active-stage {
-  background: var(--bg-accent-light);
-  font-weight: 700;
-}
-
-.time-table .active-stage .stage-cell {
-  color: var(--text-accent);
-}
-
-/* Select field reuse */
-.select-field {
-  appearance: none;
-  -webkit-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  padding-right: 32px;
-}
-
-/* ==========================================
-   Mobile Responsive
-   ========================================== */
+.time-table .active-stage { background: var(--bg-accent-light); font-weight: 700; }
+.time-table .active-stage .stage-cell { color: var(--text-accent); }
 
 @media (max-width: 480px) {
-  .gas-grid {
-    gap: var(--space-xs);
-  }
-
-  .gas-btn {
-    padding: var(--space-xs) var(--space-sm);
-    font-size: var(--font-size-xs);
-  }
-
-  .gas-color-bar {
-    height: 20px;
-  }
-
-  .tacho-svg {
-    max-width: 280px;
-  }
-
-  .tacho-percent-text {
-    font-size: 1.4rem;
-  }
-
-  .result-row {
-    grid-template-columns: 1fr;
-  }
-
-  .time-number {
-    font-size: var(--font-size-lg);
-  }
+  .gas-grid { gap: var(--space-xs); }
+  .gas-btn { padding: var(--space-xs) var(--space-sm); font-size: var(--font-size-xs); }
+  .gas-color-bar { height: 20px; }
+  .tacho-svg { max-width: 280px; }
+  .tacho-percent-text { font-size: 1.4rem; }
+  .time-number { font-size: var(--font-size-lg); }
 }
