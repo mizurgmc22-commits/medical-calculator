@@ -13,13 +13,31 @@ export function useAuth() {
   return context;
 }
 
+const ALLOWED_EMAILS = [
+  'metomo63t@gmail.com',
+  'mizu.rgmc22@gmail.com'
+];
+
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setUser(user);
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      if (currentUser) {
+        // ログインしようとしたユーザーが許可リストにいるかチェック
+        if (ALLOWED_EMAILS.includes(currentUser.email)) {
+          setUser(currentUser);
+        } else {
+          // 許可されていないユーザーは強制ログアウトしてアラートを表示
+          console.warn(`不正なログインアクセスがありました: ${currentUser.email}`);
+          await signOut(auth);
+          setUser(null);
+          alert('このアプリを利用する権限がありません。（未許可のアカウント）');
+        }
+      } else {
+        setUser(null);
+      }
       setLoading(false);
     });
     return unsubscribe;
