@@ -10,6 +10,7 @@ import SizeConverter from './pages/SizeConverter';
 import EgfrCalculator from './pages/EgfrCalculator';
 import GammaCalculator from './pages/GammaCalculator';
 import CylinderCalculator from './pages/CylinderCalculator';
+import MemoList from './pages/MemoList';
 
 function AppRoutes() {
   return (
@@ -71,6 +72,16 @@ function AppRoutes() {
           <ProtectedRoute>
             <Layout>
               <CylinderCalculator />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/memos"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <MemoList />
             </Layout>
           </ProtectedRoute>
         }

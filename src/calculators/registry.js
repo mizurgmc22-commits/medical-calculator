@@ -44,4 +44,13 @@ export const calculators = [
     phase: 3,
     enabled: true,
   },
+  {
+    id: 'memos',
+    name: 'マイノート',
+    description: '計算結果や申し送りを記録するメモ帳',
+    icon: '📝',
+    path: '/memos',
+    phase: 4,
+    enabled: true,
+  },
 ];

@@ -1,6 +1,7 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useTheme } from '../contexts/ThemeContext';
+import QuickMemo from './QuickMemo';
 import './Layout.css';
 
 export default function Layout({ children }) {
@@ -54,6 +55,7 @@ export default function Layout({ children }) {
       <main className="main-content">
         {children}
       </main>
+      <QuickMemo />
     </div>
   );
 }
