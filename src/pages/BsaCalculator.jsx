@@ -341,6 +341,57 @@ export default function BsaCalculator() {
             </div>
           </div>
 
+          {/* 一回換気量ガイド */}
+          <div className="tv-guide-card">
+            <div className="tv-guide-header">
+              <span className="tv-guide-icon">🫁</span>
+              <div>
+                <div className="tv-guide-title">目標一回換気量（TV）ガイド</div>
+                <div className="tv-guide-subtitle">PBW {results.pbw.toFixed(1)} kg に基づく ARDSNet 推奨範囲</div>
+              </div>
+            </div>
+            <div className="tv-guide-table-wrapper">
+              <table className="tv-guide-table">
+                <thead>
+                  <tr>
+                    <th>設定</th>
+                    <th>mL/kg PBW</th>
+                    <th>一回換気量 (TV)</th>
+                    <th>用途・備考</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="tv-row-low">
+                    <td><span className="tv-badge low">肺保護</span></td>
+                    <td>6 mL/kg</td>
+                    <td className="tv-value">{Math.round(results.pbw * 6)} mL</td>
+                    <td>ARDS / 肺損傷リスク高</td>
+                  </tr>
+                  <tr className="tv-row-mid">
+                    <td><span className="tv-badge mid">標準</span></td>
+                    <td>7 mL/kg</td>
+                    <td className="tv-value">{Math.round(results.pbw * 7)} mL</td>
+                    <td>一般的な術中換気の目安</td>
+                  </tr>
+                  <tr className="tv-row-high">
+                    <td><span className="tv-badge high">上限</span></td>
+                    <td>8 mL/kg</td>
+                    <td className="tv-value">{Math.round(results.pbw * 8)} mL</td>
+                    <td>健常肺 / 短時間換気など</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="tv-guide-footer">
+              <div className="tv-guide-range">
+                推奨範囲: <strong>{Math.round(results.pbw * 6)}〜{Math.round(results.pbw * 8)} mL</strong>
+              </div>
+              <div className="tv-guide-caution">
+                ⚠ ARDS例では6 mL/kg PBW以下、プラトー圧 ≤ 30 cmH₂O を目標とする（ARDSNet ARMA trial）
+              </div>
+            </div>
+          </div>
+
         </div>
       )}
 
@@ -396,8 +447,19 @@ export default function BsaCalculator() {
                     <code className="formula-code">男性: 50 + 0.91 × (身長cm - 152.4)</code>
                     <code className="formula-code">女性: 45.5 + 0.91 × (身長cm - 152.4)</code>
                     <p className="formula-desc">
-                        ARDSNet（急性呼吸窮迫症候群ネットワーク）が採用する式です。肺の大きさは身長によって決まり、肥満によって大きくならないという概念に基づき、人工呼吸器の一回換気量（6〜8 mL/kg PBW）の設定に用いられます。
+                        ARDSNet（急性呼吸窮迫症候群ネットワーク）が採用する式です。肺の大きさは身長によって決まり、肥満によって大きくならないという概念に基づき、人工呼吸器の一回換気量（TV）の設定に用いられます。
                     </p>
+                    <div className="formula-detail-box">
+                        <p className="formula-detail-title">📋 一回換気量（TV）設定の目安</p>
+                        <ul className="formula-detail-list">
+                            <li><strong>6 mL/kg PBW</strong>：ARDS患者における肺保護換気の標準設定（ARDSNet ARMA trial, 2000年）。プラトー圧 ≤ 30 cmH₂O を併せて目標とする。</li>
+                            <li><strong>6〜8 mL/kg PBW</strong>：全身麻酔中の術中換気における推奨範囲。近年の大規模研究（IMPROVE trial等）により、術中も低容量換気が術後肺合併症を減少させることが示されている。</li>
+                            <li><strong>8 mL/kg PBW</strong>：健常肺の短時間換気などにおける実質的な上限。これを超える換気量はVILI（人工呼吸器関連肺傷害）のリスクを高める。</li>
+                        </ul>
+                        <p className="formula-detail-note">
+                            ※ 実際の設定は患者の病態・気道内圧・血液ガスを総合的に評価して決定してください。PBWは「実体重」ではなく「身長から予測される理想的な体重」であり、肥満患者において特に重要な区別となります。
+                        </p>
+                    </div>
                 </div>
 
                 <div className="formula-item">
